@@ -9,7 +9,7 @@ module Colors
         Match.new(collection_color, proximity_of(color, collection_color))
       end
 
-      matches.min_by { |match| match[:proximity].abs }.color
+      matches.min_by { |match| match[:proximity] }.color
     end
 
     def proximity_of(color, collection_color)
@@ -20,7 +20,7 @@ module Colors
       second_byte_proximity = color_second_byte - collection_color_second_byte
       third_byte_proximity  = color_third_byte - collection_color_third_byte
 
-      first_byte_proximity + second_byte_proximity + third_byte_proximity
+      first_byte_proximity.abs + second_byte_proximity.abs + third_byte_proximity.abs
     end
 
     def split_color(color)
