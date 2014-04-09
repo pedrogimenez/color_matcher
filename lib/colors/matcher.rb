@@ -9,7 +9,7 @@ module Colors
         Match.new(collection_color, proximity_of(color, collection_color))
       end
 
-      matches.max_by(&:proximity).color
+      matches.min_by { |match| match[:proximity].abs }.color
     end
 
     def proximity_of(color, collection_color)
