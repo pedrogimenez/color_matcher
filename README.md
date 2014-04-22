@@ -1,6 +1,8 @@
 Colors
 ======
 
+[![Build Status](https://img.shields.io/travis/chicisimo/colors/master.svg)](https://travis-ci.org/chicisimo/colors)
+
 Colors it's just a gem that returns the nearest HEX color in a collection given a color.
 
 ## How-to use it.
