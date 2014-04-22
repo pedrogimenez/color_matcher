@@ -13,14 +13,15 @@ module Colors
     end
 
     def proximity_of(color, collection_color)
-      color_first_byte, color_second_byte, color_third_byte = split_color(color)
-      collection_color_first_byte, collection_color_second_byte, collection_color_third_byte = split_color(collection_color)
+      color_red, color_green, color_blue = split_color(color)
+      collection_color_red, collection_color_green, collection_color_blue = split_color(collection_color)
 
-      first_byte_proximity  = color_first_byte - collection_color_first_byte
-      second_byte_proximity = color_second_byte - collection_color_second_byte
-      third_byte_proximity  = color_third_byte - collection_color_third_byte
+      color_red_mean = (color_red + collection_color_red) / 2
+      color_red_gap  = color_red - collection_color_red
+      color_green_gap = color_green - collection_color_green
+      color_blue_gap  = color_blue - collection_color_blue
 
-      first_byte_proximity.abs + second_byte_proximity.abs + third_byte_proximity.abs
+      euclidean_distance(color_red_mean, color_red_gap, color_green_gap, color_blue_gap)
     end
 
     def split_color(color)
@@ -31,6 +32,10 @@ module Colors
       [first_part, second_part, third_part]
     end
 
-    private_class_method :proximity_of, :split_color
+    def euclidean_distance(red_mean, red_gap, green_gap, blue_gap)
+      Math.sqrt((((512 + red_mean) * red_gap ** 2) >> 8) + 4 * green_gap ** 2 + (((767 - red_mean) * blue_gap ** 2) >> 8));
+    end
+
+    private_class_method :proximity_of, :split_color, :euclidean_distance
   end
 end
