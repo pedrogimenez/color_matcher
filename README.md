@@ -17,4 +17,4 @@ Colors only exposes one static method:
 
 ## Color proximity
 
-We know there are loads of better algorithms to deal with color proximity but we wanted to keep it simple for now. Anyway, feel free to send a pull-request if you have any suggestion or improvement :v:.
+We are using the Euclidean distance algorithm described [here](http://www.compuphase.com/cmetric.htm).

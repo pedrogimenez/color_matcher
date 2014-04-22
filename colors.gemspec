@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name                  = "colors"
-  spec.version               = "0.0.1"
+  spec.version               = "0.0.2"
   spec.date                  = "2014-04-06"
   spec.summary               = "Matches the nearest HEX color in a collection given a color"
   spec.description           = "Matches the nearest HEX color in a collection given a color"
