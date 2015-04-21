@@ -1,20 +1,32 @@
-Colors
+ColorMatcher
 ======
 
-[![Build Status](https://img.shields.io/travis/chicisimo/colors/master.svg)](https://travis-ci.org/chicisimo/colors)
+[![Build Status](https://img.shields.io/travis/chicisimo/color_matcher/master.svg)](https://travis-ci.org/chicisimo/color_matcher)
 
-Colors it's just a gem that returns the nearest HEX color in a collection given a color.
+ColorMatcher it's a gem that given a color, returns the nearest one from a collection.
 
-## How-to use it.
+## Usage
 
-You should read the [tests](https://github.com/chicisimo/colors/blob/master/spec/matcher_spec.rb) as they are the most updated documentation.
+You should read the [tests](https://github.com/chicisimo/color_matcher/blob/master/spec/color_matcher_spec.rb) as they are the most updated documentation.
 
-Colors only exposes one static method:
+There's only one method:
 
 ```ruby
-  Colors::Matcher.closest_color("000000", ["000000", "ffffff"]) # => 000000
+  ColorMatcher.closest_color("000000", ["000000", "ffffff"]) # => 000000
 ```
 
-## Color proximity
+## How do we use it at Chicisimo
 
-We are using the Euclidean distance algorithm described [here](http://www.compuphase.com/cmetric.htm).
+We use the color matcher at Chicisimo to match our looks with the color picked using the slider in our discover section:
+
+<p align="center">
+  <img src="doc/discover.png" width="200">
+</p>
+
+## Algorithm
+
+We are using the Euclidean distance algorithm as described [here](http://www.compuphase.com/cmetric.htm).
+
+## License
+
+ColorMatcher is open-sourced software licensed under the MIT license.
