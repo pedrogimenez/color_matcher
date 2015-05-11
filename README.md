@@ -1,13 +1,13 @@
 ColorMatcher
 ======
 
-[![Build Status](https://img.shields.io/travis/chicisimo/color_matcher/master.svg)](https://travis-ci.org/chicisimo/color_matcher)
+[![Build Status](https://img.shields.io/travis/pedrogimenez/color_matcher/master.svg)](https://travis-ci.org/pedrogimenez/color_matcher)
 
 ColorMatcher it's a gem that given a color, returns the nearest one from a collection.
 
 ## Usage
 
-You should read the [tests](https://github.com/chicisimo/color_matcher/blob/master/spec/color_matcher_spec.rb) as they are the most updated documentation.
+You should read the [tests](https://github.com/pedrogimenez/color_matcher/blob/master/spec/color_matcher_spec.rb) as they are the most updated documentation.
 
 There's only one method:
 
